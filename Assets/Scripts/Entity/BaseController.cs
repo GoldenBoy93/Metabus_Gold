@@ -134,9 +134,14 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Attack()
     {
+        animationHandler.Attack();
+
+        
+
         // 바라보는 방향이 있을 때만 공격
-        if (lookDirection != Vector2.zero)
-            weaponHandler?.Attack();
+        //if (lookDirection != Vector2.zero)
+        //    Debug.Log("공격");
+        //    weaponHandler?.Attack();
     }
 
     public virtual void Death()
