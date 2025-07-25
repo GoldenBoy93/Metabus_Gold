@@ -26,21 +26,19 @@ public class AnimationHandler : MonoBehaviour
             animator.SetBool(IsMoving, true);
             animator.SetFloat("hAxisRaw", 0);
             animator.SetFloat("vAxisRaw", 0);
-
-                animator.SetFloat("hAxisRaw", obj.x);
-
+            animator.SetFloat("hAxisRaw", obj.x);
+            animator.SetFloat("vAxisRaw_A", 0);
+            animator.SetFloat("hAxisRaw_A", obj.x);
         }
-
         else if (obj.y != 0)
         {
             animator.SetBool(IsMoving, true);
             animator.SetFloat("vAxisRaw", 0);
             animator.SetFloat("hAxisRaw", 0);
-
-                animator.SetFloat("vAxisRaw", obj.y);
-
+            animator.SetFloat("vAxisRaw", obj.y);
+            animator.SetFloat("hAxisRaw_A", 0);
+            animator.SetFloat("vAxisRaw_A", obj.y);
         }
-
         else
         {
             animator.SetBool (IsMoving, false);
@@ -49,8 +47,8 @@ public class AnimationHandler : MonoBehaviour
 
     public void Attack()
     {
-        // 공격 애니메이션 상태 진입
-        animator.SetBool(IsAttack, true);
+        // 공격 애니메이션
+        animator.SetTrigger(IsAttack);
     }
 
     public void Damage()

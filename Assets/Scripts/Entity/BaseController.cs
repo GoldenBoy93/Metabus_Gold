@@ -86,24 +86,6 @@ public class BaseController : MonoBehaviour
         animationHandler.Move(direction);
     }
 
-    // 캐릭터 회전 방향 잡는곳 (현재 좌우 플립만 있음)
-    //private void Rotate(Vector2 direction)
-    //{
-    //    float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    //    bool isLeft = Mathf.Abs(rotZ) > 90f;
-
-    //    // 스프라이트 좌우 반전
-    //    characterRenderer.flipX = isLeft;
-
-    //    if (weaponPivot != null)
-    //    {
-    //        weaponPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-    //    }
-
-    //    // 무기도 함께 좌우 반전 처리
-    //    weaponHandler?.Rotate(isLeft);
-    //}
-
     public void ApplyKnockback(Transform other, float power, float duration)
     {
         knockbackDuration = duration;
@@ -127,6 +109,7 @@ public class BaseController : MonoBehaviour
         // 공격 입력 중이고 쿨타임이 끝났으면 공격 실행
         if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
         {
+            Debug.Log("공격중");
             timeSinceLastAttack = 0;
             Attack(); // 실제 공격 실행
         }
@@ -135,13 +118,6 @@ public class BaseController : MonoBehaviour
     protected virtual void Attack()
     {
         animationHandler.Attack();
-
-        
-
-        // 바라보는 방향이 있을 때만 공격
-        //if (lookDirection != Vector2.zero)
-        //    Debug.Log("공격");
-        //    weaponHandler?.Attack();
     }
 
     public virtual void Death()
