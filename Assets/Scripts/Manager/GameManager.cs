@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI talkText;
     public GameObject scanObject;
     public bool isTalkAction;
+    public TalkManager talkManager;
+    public int talkIndex;
 
     private void Awake()
     {
@@ -68,21 +70,38 @@ public class GameManager : MonoBehaviour
 
     public void TalkAction(GameObject scanObj)
     {
-        // 토크액션을 false
-        if (isTalkAction)
-        {
-            isTalkAction = false;
-            talkPanel.SetActive(false);
-        }
-        // 토크액션을 true
-        else
-        {
-            isTalkAction = true;
-            talkPanel.SetActive(true);
-            scanObject = scanObj;
-            talkText.text = $"이것의 이름은 {scanObject.name}이라고 한다";
-        }
+        scanObject = scanObj;
+        //talkText.text = $"이것의 이름은 {scanObject.name}이라고 한다";
+        ObjectData objectData = scanObj.GetComponent<ObjectData>();
+        Talk(objectData.id, objectData.isNPC);
+        
         // 토크액션이 true라면 대화창을 켠다
         talkPanel.SetActive(isTalkAction);
+    }
+
+    void Talk(int id, bool isNPC)
+    {
+        string talkData = talkManager.GetTalk(id, talkIndex);
+        
+        if (talkData == null)
+        {
+            isTalkAction = false;
+            talkIndex = 0;
+            
+            // 함수종료
+            return;
+        }
+
+        if(isNPC)
+        {
+            talkText.text = talkData;
+        }
+        else
+        {
+            talkText.text = talkData;
+        }
+
+        isTalkAction = true;
+        talkIndex++;
     }
 }
