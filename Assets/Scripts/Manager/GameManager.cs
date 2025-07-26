@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 // 게임 전체를 관리하는 메인 매니저 클래스
 public class GameManager : MonoBehaviour
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentWaveIndex = 0; // 현재 웨이브 번호
 
     private EnemyManager enemyManager; // 적 생성 및 관리하는 매니저
+
+    public GameObject talkPanel;
+    public TextMeshProUGUI talkText;
+    public GameObject scanObject;
+    public bool isTalkAction;
 
     private void Awake()
     {
@@ -58,5 +64,25 @@ public class GameManager : MonoBehaviour
         {
             StartGame();
         }
+    }
+
+    public void TalkAction(GameObject scanObj)
+    {
+        // 토크액션을 false
+        if (isTalkAction)
+        {
+            isTalkAction = false;
+            talkPanel.SetActive(false);
+        }
+        // 토크액션을 true
+        else
+        {
+            isTalkAction = true;
+            talkPanel.SetActive(true);
+            scanObject = scanObj;
+            talkText.text = $"이것의 이름은 {scanObject.name}이라고 한다";
+        }
+        // 토크액션이 true라면 대화창을 켠다
+        talkPanel.SetActive(isTalkAction);
     }
 }

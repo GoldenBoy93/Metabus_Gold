@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : BaseController
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
+    GameObject scanObject;
 
     public void Init(GameManager gameManager)
     {
@@ -14,13 +15,14 @@ public class PlayerController : BaseController
     protected override void HandleAction()
     {
         // 키보드 입력을 통해 이동 방향 계산 (좌/우/상/하)
-        float horizontal = Input.GetAxisRaw("Horizontal"); // A/D 또는 ←/→
-        float vertical = Input.GetAxisRaw("Vertical"); // W/S 또는 ↑/↓
+        // 토크액션이 true 상태일때는 키입력 안됨
+        float horizontal = gameManager.isTalkAction ? 0 : Input.GetAxisRaw("Horizontal"); // A/D 또는 ←/→
+        float vertical = gameManager.isTalkAction ? 0 : Input.GetAxisRaw("Vertical"); // W/S 또는 ↑/↓
 
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonDown("Horizontal");
-        bool vUp = Input.GetButtonDown("Vertical");
+        bool hDown = gameManager.isTalkAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = gameManager.isTalkAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = gameManager.isTalkAction ? false : Input.GetButtonDown("Horizontal");
+        bool vUp = gameManager.isTalkAction ? false : Input.GetButtonDown("Vertical");
 
         if (hDown || hUp)
             isHorizontalMove = true;
@@ -38,6 +40,28 @@ public class PlayerController : BaseController
 
         // 공격키 지정 (z키)
         isAttacking = Input.GetKeyDown(KeyCode.Z);
+
+        if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
+        {
+            Debug.Log($"This is {scanObject.name}");
+            gameManager.TalkAction(scanObject);
+        }
+    }
+
+    protected override void HandleAction2()
+    {
+        // 조사액션 Ray
+        Debug.DrawRay(_rigidbody.position, lookDirection * 1f, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(_rigidbody.position, LookDirection, 1f, LayerMask.GetMask("NPC"));
+
+        if (rayHit.collider != null)
+        {
+            scanObject = rayHit.collider.gameObject;
+        }
+        else
+        {
+            scanObject = null;
+        }
     }
 
     public override void Death()
