@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isTalkAction;
     public TalkManager talkManager;
     public int talkIndex;
+    public Image portraitImg;
 
     private void Awake()
     {
@@ -81,6 +82,11 @@ public class GameManager : MonoBehaviour
 
     void Talk(int id, bool isNPC)
     {
+        if (talkIndex != null)
+        {
+            Debug.Log($"talkIndex : {talkIndex}");
+        }
+        
         string talkData = talkManager.GetTalk(id, talkIndex);
         
         if (talkData == null)
@@ -94,11 +100,25 @@ public class GameManager : MonoBehaviour
 
         if(isNPC)
         {
-            talkText.text = talkData;
+            // ':'를 기준으로 대사와 초상화 번호 분리
+            string[] splitData = talkData.Split(':');
+
+            // 순수 대화만 텍스트 UI에 할당
+            talkText.text = splitData[0];
+
+            // 초상화 번호를 가져와서 Sprite 할당
+            int portraitIndex = int.Parse(splitData[1]);
+            portraitImg.sprite = talkManager.GetPortrait(id, portraitIndex);
+
+            // 초상화가 보이도록 색상 설정
+            portraitImg.color = new Color(1, 1, 1, 1);
         }
         else
         {
             talkText.text = talkData;
+
+            // 초상화가 없는 not NPC 일경우는 이미지의 a값을 0 (투명)
+            portraitImg.color = new Color(1, 1, 1, 0);
         }
 
         isTalkAction = true;
