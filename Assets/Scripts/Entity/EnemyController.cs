@@ -27,7 +27,7 @@ public class EnemyController : BaseController
         base.HandleAction();
 
         // 무기나 타겟이 없으면 아무 행동도 하지 않음
-        if (weaponHandler == null || target == null)
+        if (target == null)
         {
             // 정지 처리
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
@@ -45,15 +45,15 @@ public class EnemyController : BaseController
             lookDirection = direction; // 방향 전환
 
             // 공격 사거리 안으로 들어왔을 경우
-            if (distance <= weaponHandler.AttackRange)
+            if (distance <= statHandler.AttackRange)
             {
-                int layerMaskTarget = weaponHandler.target;
+                int layerMaskTarget = statHandler.target;
 
                 // 앞에 장애물이 없는지 확인하며, 대상이 맞는지 체크
                 RaycastHit2D hit = Physics2D.Raycast(
                     transform.position,
                     direction,
-                    weaponHandler.AttackRange * 1.5f, // 사거리보다 약간 여유 있게
+                    statHandler.AttackRange * 1.5f, // 사거리보다 약간 여유 있게
                     (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget
                 );
 
@@ -64,8 +64,8 @@ public class EnemyController : BaseController
                 }
 
                 // 공격 범위 안이므로 정지
-                //movementDirection = Vector2.zero;
-                //return;
+                movementDirection = Vector2.zero;
+                return;
 
             }
 

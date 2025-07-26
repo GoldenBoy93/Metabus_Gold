@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975cb8e39fcf7f04694d4643327e9e3e
+guid: a5c437d72be02b348921252f01588c45
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: Idle_Flipx_0
       rect:
         serializedVersion: 2
-        x: 49
+        x: 53
         y: 0
-        width: 32
-        height: 64
+        width: 28
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a79bd5bac67419d44b222d737c8ccbe4
-      internalID: -979449843
+      spriteID: 3f4b2359e5e46d048ab68ef8f03a7ace
+      internalID: -1420016458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1
+      name: Idle_Flipx_1
       rect:
         serializedVersion: 2
-        x: 177
+        x: 181
         y: 0
-        width: 31
-        height: 64
+        width: 28
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abe5441d9e828e94989ea6c056a77cfd
-      internalID: 774665403
+      spriteID: e9c43cacedc06b848b184070693c54f6
+      internalID: -269290794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_2
+      name: Idle_Flipx_2
       rect:
         serializedVersion: 2
-        x: 303
+        x: 309
         y: 0
-        width: 45
-        height: 64
+        width: 28
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d402fec635f479549b82af43ee8cae91
-      internalID: -900705887
+      spriteID: 2698ee588ef22aa4e96d6b8afa9b9fed
+      internalID: -634818997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_3
+      name: Idle_Flipx_3
       rect:
         serializedVersion: 2
-        x: 428
+        x: 437
         y: 0
-        width: 49
-        height: 64
+        width: 28
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41bc179f8437e6f40830c53f6552ab81
-      internalID: -37866758
+      spriteID: 503522d89e68bc640b7ef650db76ec56
+      internalID: 184270309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Flipx_4
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 0
+        width: 28
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885f609ca2fd1e94e880f9ec50cb38dd
+      internalID: -36671935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Flipx_5
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 28
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513fca233c290704e8739fa8ef3368d9
+      internalID: -596993366
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_0: -979449843
-      Attack_1: 774665403
-      Attack_2: -900705887
-      Attack_3: -37866758
+      Idle_Flipx_0: -1420016458
+      Idle_Flipx_1: -269290794
+      Idle_Flipx_2: -634818997
+      Idle_Flipx_3: 184270309
+      Idle_Flipx_4: -36671935
+      Idle_Flipx_5: -596993366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

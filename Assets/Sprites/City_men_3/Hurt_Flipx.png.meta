@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975cb8e39fcf7f04694d4643327e9e3e
+guid: c8187257d5858f142ba6af90f6b84f71
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: Hurt_Flipx_0
       rect:
         serializedVersion: 2
-        x: 49
+        x: 50
         y: 0
-        width: 32
-        height: 64
+        width: 41
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a79bd5bac67419d44b222d737c8ccbe4
-      internalID: -979449843
+      spriteID: 8d6dcfcd53abece4093a79152abd94e1
+      internalID: -764934137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1
+      name: Hurt_Flipx_1
       rect:
         serializedVersion: 2
         x: 177
         y: 0
-        width: 31
-        height: 64
+        width: 37
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abe5441d9e828e94989ea6c056a77cfd
-      internalID: 774665403
+      spriteID: 2d871c7806edf254c979b948722c5a49
+      internalID: -653680287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_2
+      name: Hurt_Flipx_3
       rect:
         serializedVersion: 2
-        x: 303
+        x: 304
         y: 0
-        width: 45
-        height: 64
+        width: 39
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,29 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d402fec635f479549b82af43ee8cae91
-      internalID: -900705887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_3
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 0
-        width: 49
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41bc179f8437e6f40830c53f6552ab81
-      internalID: -37866758
+      spriteID: dea462792cab23b439f836808608fb88
+      internalID: -908660412
       vertices: []
       indices: 
       edges: []
@@ -230,10 +209,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_0: -979449843
-      Attack_1: 774665403
-      Attack_2: -900705887
-      Attack_3: -37866758
+      Hurt_Flipx_0: -764934137
+      Hurt_Flipx_1: -653680287
+      Hurt_Flipx_2: -735866646
+      Hurt_Flipx_3: -908660412
+      Hurt_Flipx_4: -551498750
+      Hurt_Flipx_5: 1283266005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

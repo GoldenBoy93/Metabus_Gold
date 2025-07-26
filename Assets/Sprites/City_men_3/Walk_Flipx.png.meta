@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975cb8e39fcf7f04694d4643327e9e3e
+guid: 4891af723b9adb842bf3c1d5e49107e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: Walk_Flipx_0
       rect:
         serializedVersion: 2
-        x: 49
+        x: 48
         y: 0
-        width: 32
-        height: 64
+        width: 30
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a79bd5bac67419d44b222d737c8ccbe4
-      internalID: -979449843
+      spriteID: 07478d1026752694aaadbfe17a00e059
+      internalID: -1803586137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1
+      name: Walk_Flipx_1
       rect:
         serializedVersion: 2
-        x: 177
+        x: 184
+        y: 0
+        width: 21
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee0335c8f5f77b4396e3e08a9dc402c
+      internalID: -38467171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_2
+      rect:
+        serializedVersion: 2
+        x: 307
         y: 0
         width: 31
-        height: 64
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abe5441d9e828e94989ea6c056a77cfd
-      internalID: 774665403
+      spriteID: 3833183e77fe3d743b8818101d2fd189
+      internalID: -507955434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_2
+      name: Walk_Flipx_3
       rect:
         serializedVersion: 2
-        x: 303
+        x: 431
         y: 0
-        width: 45
-        height: 64
+        width: 36
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d402fec635f479549b82af43ee8cae91
-      internalID: -900705887
+      spriteID: 7d109b0accac15340be55f41963a4ab8
+      internalID: -1128844506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_3
+      name: Walk_Flipx_4
       rect:
         serializedVersion: 2
-        x: 428
+        x: 558
         y: 0
-        width: 49
-        height: 64
+        width: 36
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +234,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41bc179f8437e6f40830c53f6552ab81
-      internalID: -37866758
+      spriteID: 76f02019ff56ea84bb55fa801eb734bf
+      internalID: 1039295970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_5
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 0
+        width: 25
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144c2e36463f913499e4dcb92e625f85
+      internalID: 2093924094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_6
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 0
+        width: 18
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0750855f9f04824eab6fdb5ccd80cb4
+      internalID: 1081397034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_7
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 0
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00785dc553b476b48a7be12c2d299810
+      internalID: 965897367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_8
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 0
+        width: 37
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b928e9ef88eb9c4d9edd5a93f30122d
+      internalID: 872240908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Flipx_9
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 0
+        width: 33
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e944b828cabef564ea9d7c6510dff612
+      internalID: 1245894557
       vertices: []
       indices: 
       edges: []
@@ -230,10 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_0: -979449843
-      Attack_1: 774665403
-      Attack_2: -900705887
-      Attack_3: -37866758
+      Walk_Flipx_0: -1803586137
+      Walk_Flipx_1: -38467171
+      Walk_Flipx_2: -507955434
+      Walk_Flipx_3: -1128844506
+      Walk_Flipx_4: 1039295970
+      Walk_Flipx_5: 2093924094
+      Walk_Flipx_6: 1081397034
+      Walk_Flipx_7: 965897367
+      Walk_Flipx_8: 872240908
+      Walk_Flipx_9: 1245894557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5563,14 +5563,13 @@ GameObject:
   - component: {fileID: 279505120}
   - component: {fileID: 279505122}
   - component: {fileID: 279505121}
+  - component: {fileID: 279505126}
   - component: {fileID: 279505123}
   - component: {fileID: 279505124}
   - component: {fileID: 279505125}
-  - component: {fileID: 279505126}
-  - component: {fileID: 279505127}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5675,9 +5674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f249040bce7f742b7189b9ea33ab97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterRenderer: {fileID: 1882370564}
-  weaponPivot: {fileID: 0}
-  WeaponPrefab: {fileID: 6691298636631681860, guid: c5e9478957bcbd14ca8d8b3e15cd1aa6, type: 3}
 --- !u!114 &279505124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5704,30 +5700,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 3
---- !u!114 &279505126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279505119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e72eab3c82aaa794da0e885fd1ca6c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 1
-  weaponSize: 1
-  power: 1
-  speed: 1
+  attackDelay: 1
+  attackPower: 1
   attackRange: 10
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   isOnKnockback: 0
-  knockbackPower: 0.1
+  knockbackPower: 1
   knockbackTime: 0.5
---- !u!114 &279505127
+  collideBoxSize: {x: 1, y: 1}
+--- !u!114 &279505126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

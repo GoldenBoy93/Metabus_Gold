@@ -6,7 +6,6 @@ public class AnimationHandler : MonoBehaviour
 {
     // Animator 파라미터 이름을 미리 해시로 변환해 캐싱 (성능 최적화)
     // 해시란 문자열 매번 반복 계산하지 않고 int 정수값으로 변환하여 비교하는 과정을 간단화
-    private static readonly int IsAttack = Animator.StringToHash("IsAttack");
     private static readonly int IsMoving = Animator.StringToHash("IsMove");
     private static readonly int IsDamage = Animator.StringToHash("IsDamage");
     private static readonly int IsDeath = Animator.StringToHash("IsDeath");
@@ -27,8 +26,6 @@ public class AnimationHandler : MonoBehaviour
             animator.SetFloat("hAxisRaw", 0);
             animator.SetFloat("vAxisRaw", 0);
             animator.SetFloat("hAxisRaw", obj.x);
-            animator.SetFloat("vAxisRaw_A", 0);
-            animator.SetFloat("hAxisRaw_A", obj.x);
         }
         else if (obj.y != 0)
         {
@@ -36,19 +33,11 @@ public class AnimationHandler : MonoBehaviour
             animator.SetFloat("vAxisRaw", 0);
             animator.SetFloat("hAxisRaw", 0);
             animator.SetFloat("vAxisRaw", obj.y);
-            animator.SetFloat("hAxisRaw_A", 0);
-            animator.SetFloat("vAxisRaw_A", obj.y);
         }
         else
         {
             animator.SetBool (IsMoving, false);
         }
-    }
-
-    public void Attack()
-    {
-        // 공격 애니메이션
-        animator.SetTrigger(IsAttack);
     }
 
     public void Damage()

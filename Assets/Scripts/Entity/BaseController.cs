@@ -5,8 +5,6 @@ public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D _rigidbody; // 이동을 위한 물리 컴포넌트
 
-    [SerializeField] private SpriteRenderer characterRenderer; // 좌우 반전을 위한 렌더러
-    [SerializeField] private Transform weaponPivot; // 무기를 회전시킬 기준 위치
 
     protected Vector2 movementDirection = Vector2.zero; // 현재 이동 방향
     public Vector2 MovementDirection { get { return movementDirection; } }
@@ -19,8 +17,6 @@ public class BaseController : MonoBehaviour
     protected AnimationHandler animationHandler;
     protected StatHandler statHandler; // 캐릭터의 능력치(속도, 체력 등)를 담고 있는 컴포넌트
 
-    [SerializeField] public WeaponHandler WeaponPrefab; // 장착할 무기 프리팹 (없으면 자식에서 찾아 사용)
-    protected WeaponHandler weaponHandler; // 장착된 무기
 
     protected bool isAttacking; // 공격 중 여부
     private float timeSinceLastAttack = float.MaxValue; // 마지막 공격 이후 경과 시간
@@ -35,12 +31,6 @@ public class BaseController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<StatHandler>();
-
-        // 프리팹이 지정되어 있다면 생성해서 장착 위치에 부착
-        if (WeaponPrefab != null)
-            weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
-        else
-            weaponHandler = GetComponentInChildren<WeaponHandler>(); // 이미 붙어 있는 무기 사용
     }
 
     protected virtual void Start()
@@ -95,21 +85,15 @@ public class BaseController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (weaponHandler == null)
-        {
-            return;
-        }
-
         // 공격 쿨다운 중이면 시간 누적
-        if (timeSinceLastAttack <= weaponHandler.Delay)
+        if (timeSinceLastAttack <= statHandler.AttackDelay)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
 
         // 공격 입력 중이고 쿨타임이 끝났으면 공격 실행
-        if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
+        if (isAttacking && timeSinceLastAttack > statHandler.AttackDelay)
         {
-            Debug.Log("공격중");
             timeSinceLastAttack = 0;
             Attack(); // 실제 공격 실행
         }
@@ -117,7 +101,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        animationHandler.Attack();
+        statHandler.Attack();
     }
 
     public virtual void Death()
@@ -135,8 +119,6 @@ public class BaseController : MonoBehaviour
             color.a = 0.5f;
             renderer.color = color;
         }
-
-        weaponHandler = null;
 
         // 모든 컴포넌트(스크립트 포함) 비활성화
         foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())

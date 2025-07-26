@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975cb8e39fcf7f04694d4643327e9e3e
+guid: 80f88050e3a179b4c9610b16d5239e9e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,73 +136,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: Attack_Flipx_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a79bd5bac67419d44b222d737c8ccbe4
-      internalID: -979449843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_1
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 0
-        width: 31
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abe5441d9e828e94989ea6c056a77cfd
-      internalID: 774665403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_2
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 0
-        width: 45
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d402fec635f479549b82af43ee8cae91
-      internalID: -900705887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_3
-      rect:
-        serializedVersion: 2
-        x: 428
+        x: 35
         y: 0
         width: 49
         height: 64
@@ -213,8 +150,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41bc179f8437e6f40830c53f6552ab81
-      internalID: -37866758
+      spriteID: 6ffd2d6e9e0ad1c4a88ca3c76d824c58
+      internalID: -206206085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Flipx_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2327f4467a31a4f97eeec99a217ffd
+      internalID: 2121536196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Flipx_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5759a8b51135a4fb65cc21218d46d7
+      internalID: 1299219733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Flipx_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df47687c099499d4b8cb3a220fa613ff
+      internalID: 304766678
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_0: -979449843
-      Attack_1: 774665403
-      Attack_2: -900705887
-      Attack_3: -37866758
+      Attack_Flipx_0: -206206085
+      Attack_Flipx_1: 2121536196
+      Attack_Flipx_2: 1299219733
+      Attack_Flipx_3: 304766678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

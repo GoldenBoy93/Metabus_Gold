@@ -27,7 +27,14 @@ public class PlayerController : BaseController
         else if (vDown || vUp)
             isHorizontalMove = false;
 
+        // 4방향으로만 움직이기
         movementDirection = isHorizontalMove ? new Vector2(horizontal, 0) : new Vector2(0, vertical);
+
+        // 플레이어가 이동 중일 때만 lookDirection 업데이트
+        if (movementDirection != Vector2.zero)
+        {
+            lookDirection = movementDirection;
+        }
 
         // 공격키 지정 (z키)
         isAttacking = Input.GetKeyDown(KeyCode.Z);
