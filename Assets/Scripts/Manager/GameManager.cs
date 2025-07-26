@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager; // 적 생성 및 관리하는 매니저
 
+
     public GameObject talkPanel;
     public TextMeshProUGUI talkText;
     public GameObject scanObject;
     public bool isTalkAction;
     public TalkManager talkManager;
+    public QuestManager questManager;
     public int talkIndex;
     public Image portraitImg;
 
@@ -82,22 +84,22 @@ public class GameManager : MonoBehaviour
 
     void Talk(int id, bool isNPC)
     {
-        if (talkIndex != null)
-        {
-            Debug.Log($"talkIndex : {talkIndex}");
-        }
+        // Set Talk Data
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
         
-        string talkData = talkManager.GetTalk(id, talkIndex);
-        
+        // Talk End
         if (talkData == null)
         {
             isTalkAction = false;
             talkIndex = 0;
+            Debug.Log(questManager.CheckQuest(id));
             
             // 함수종료
             return;
         }
 
+        // Continue Talk
         if(isNPC)
         {
             // ':'를 기준으로 대사와 초상화 번호 분리
