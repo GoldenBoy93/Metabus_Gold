@@ -150,12 +150,12 @@ MonoBehaviour:
   health: 5
   speed: 1.5
   attackDelay: 1.5
-  attackPower: 1
+  attackPower: 2
   attackRange: 1.3
   target:
     serializedVersion: 2
     m_Bits: 64
-  isOnKnockback: 0
+  isOnKnockback: 1
   knockbackPower: 0
   knockbackTime: 0.5
   collideBoxSize: {x: 1, y: 1}

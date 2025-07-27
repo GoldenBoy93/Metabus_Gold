@@ -72,7 +72,7 @@ public class QuestManager : MonoBehaviour
                 if (questActionIndex == 0)
                 {
                     questObject[0].SetActive(false);
-                    gameManager.StartGame();
+                    gameManager.StartBattle();
                 }
                 break;
         }

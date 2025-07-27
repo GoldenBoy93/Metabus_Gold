@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager; // 적 생성 및 관리하는 매니저
 
+    public UIManager uiManager;
+    public static bool isFirstLoading = true;
+
 
     public GameObject talkPanel;
     public TextMeshProUGUI talkText;
@@ -40,9 +43,39 @@ public class GameManager : MonoBehaviour
         // 퀘스트 매니저 초기화
         questManager = GetComponentInChildren<QuestManager>();
         questManager.Init(this);
+
+        // UI 매니저 참조 획득
+        uiManager = FindObjectOfType<UIManager>();
+
+        // 플레이어의 체력 리소스 컨트롤러 설정
+        _playerResourceController = player.GetComponent<ResourceController>();
+
+        // 체력 변경 이벤트를 UI에 연결
+        // 중복 등록 방지를 위해 먼저 제거한 뒤 다시 등록
+        _playerResourceController.RemoveHealthChangeEvent(uiManager.ChangePlayerHP);
+        _playerResourceController.AddHealthChangeEvent(uiManager.ChangePlayerHP);
+    }
+
+    private void Start()
+    {
+        // 첫 로딩이면 대기 상태로 유지 (타이틀 화면에서 버튼으로 시작하도록)
+        if (!isFirstLoading)
+        {
+            StartGame(); // 두 번째 이후 씬 로딩 시 자동 시작
+        }
+        else
+        {
+            isFirstLoading = false; // 첫 로딩 플래그 해제
+        }
     }
 
     public void StartGame()
+    {
+        uiManager.SetPlayGame(); // UI 상태를 게임 상태로 전환
+    }
+
+
+    public void StartBattle()
     {
         StartNextWave(); // 첫 웨이브 시작
     }
@@ -50,6 +83,7 @@ public class GameManager : MonoBehaviour
     void StartNextWave()
     {
         currentWaveIndex += 1; // 웨이브 인덱스 증가
+
         // 5웨이브마다 난이도 증가 (예: 1~4 → 레벨 1, 5~9 → 레벨 2 ...)
         enemyManager.StartWave(1 + currentWaveIndex / 5);
     }
@@ -64,15 +98,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         enemyManager.StopWave(); // 적 스폰 중지
-    }
-
-    // 개발용 테스트: Space 키로 게임 시작
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartGame();
-        }
     }
 
     public void TalkAction(GameObject scanObj)

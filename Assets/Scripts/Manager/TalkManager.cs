@@ -24,7 +24,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(1000, new string[] { "안녕?:0", "왜 스프라이트랑 대화초상화랑 다르냐고?:1", "그게 뭔데 씹덕아.:2" });
 
         // Eve
-        talkData.Add(2000, new string[] { "안녕? 오랜만이지?:3", "너를 아냐고?:4", "당연히 모르지, 지금 처음 봤는데.:5" });
+        talkData.Add(2000, new string[] { "안녕!:3", "너를 아냐고?:4", "당연히 모르지, 지금 처음 봤는데.:5" });
         
         // May
         talkData.Add(3000, new string[] { "묻겠다.:6", "당신이 나의 마스터인가?:6", "제 연기 어땠나요?:6" });
