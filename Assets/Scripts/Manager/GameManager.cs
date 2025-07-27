@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
         // 적 매니저 초기화
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
+
+        // 퀘스트 매니저 초기화
+        questManager = GetComponentInChildren<QuestManager>();
+        questManager.Init(this);
     }
 
     public void StartGame()

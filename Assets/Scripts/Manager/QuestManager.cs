@@ -9,7 +9,13 @@ public class QuestManager : MonoBehaviour
     public GameObject[] questObject;
 
     Dictionary<int, QuestData> questList;
-    
+
+    GameManager gameManager;
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+    }
+
     void Awake()
     {
         questList = new Dictionary<int, QuestData>();
@@ -30,14 +36,18 @@ public class QuestManager : MonoBehaviour
 
     public string CheckQuest(int id)
     {
-        if(id == questList[questId].npcId[questActionIndex])
+        if (id == questList[questId].npcId[questActionIndex])
         questActionIndex++;
-        
-        // Control Quest Object
-        ControlObject();
         
         if (questActionIndex == questList[questId].npcId.Length)
             NextQuest();
+
+        // Control Quest Object
+        ControlObject();
+        
+        // 현재 퀘스트 확인
+        Debug.Log($"현재 퀘스트 ID : {questId}");
+        Debug.Log($"현재 퀘스트 Action Index : {questActionIndex}");
 
         return questList[questId].questName;
     }
@@ -50,15 +60,20 @@ public class QuestManager : MonoBehaviour
 
     void ControlObject()
     {
-        switch(questId)
+        switch (questId)
         {
             case 10:
                 if (questActionIndex == 1)
+                {
                     questObject[0].SetActive(true);
-                break;
+                }
+                    break;
             case 20:
-                if (questActionIndex == 2)
+                if (questActionIndex == 0)
+                {
                     questObject[0].SetActive(false);
+                    gameManager.StartGame();
+                }
                 break;
         }
     }

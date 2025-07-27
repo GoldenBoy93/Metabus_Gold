@@ -43,7 +43,8 @@ public class PlayerController : BaseController
 
         if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
         {
-            Debug.Log($"This is {scanObject.name}");
+            //Debug.Log($"This is {scanObject.name}");
+            
             gameManager.TalkAction(scanObject);
         }
     }

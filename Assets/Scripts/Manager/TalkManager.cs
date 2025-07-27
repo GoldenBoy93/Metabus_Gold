@@ -29,6 +29,9 @@ public class TalkManager : MonoBehaviour
         // May
         talkData.Add(3000, new string[] { "묻겠다.:6", "당신이 나의 마스터인가?:6", "제 연기 어땠나요?:6" });
 
+        // Alice Boyfriend
+        talkData.Add(5000, new string[] { "넌 참견하지 말고 꺼져!" });
+
         // Dog
         talkData.Add(100, new string[] { "헥헥!!", "개가 다리에 붙어서 마운팅을 하고 있다." });
 

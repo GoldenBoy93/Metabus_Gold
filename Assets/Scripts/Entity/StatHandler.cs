@@ -86,12 +86,14 @@ public class StatHandler : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log("hit");
+            //Debug.Log("hit");
+
             // 대상에게 체력 감소 적용
             ResourceController resourceController = hit.collider.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                Debug.Log("Damage");
+                //Debug.Log("Damage");
+
                 resourceController.ChangeHealth(-AttackPower); // 데미지 적용
 
                 // 넉백 효과가 설정되어 있을 경우 적용
