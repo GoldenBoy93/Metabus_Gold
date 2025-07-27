@@ -20,40 +20,26 @@ public class AnimationHandler : MonoBehaviour
 
     public void Move(Vector2 obj)
     {
-        animator.SetBool(IsMoving, true);
-
         if (obj.x != 0)
         {
-            //animator.SetBool(IsMoving, true);
-            animator.SetInteger("vAxisRaw", 0);
-            if (animator.GetInteger("hAxisRaw") != obj.x)
-            {
-                Debug.Log("dd");
-                animator.SetInteger("hAxisRaw", (int)obj.x);
-            }
+            animator.SetBool(IsMoving, true);
+            animator.SetFloat("hAxisRaw", 0);
+            animator.SetFloat("vAxisRaw", 0);
+            animator.SetFloat("hAxisRaw", obj.x);
         }
-
         else if (obj.y != 0)
         {
-            //animator.SetBool(IsMoving, true);
-            animator.SetInteger("hAxisRaw", 0);
-            if (animator.GetInteger("vAxisRaw") != obj.y)
-            {
-                animator.SetInteger("vAxisRaw", (int)obj.y);
-            }
+            animator.SetBool(IsMoving, true);
+            animator.SetFloat("vAxisRaw", 0);
+            animator.SetFloat("hAxisRaw", 0);
+            animator.SetFloat("vAxisRaw", obj.y);
         }
-
         else
         {
-            animator.SetInteger("hAxisRaw", 0);
-            animator.SetInteger("vAxisRaw", 0);
             animator.SetBool (IsMoving, false);
         }
-
-        // 이동 방향 벡터의 크기를 이용해 움직이는 중인지 판단
-        //animator.SetBool(IsMoving, obj.magnitude > .5f);
     }
-    
+
     public void Damage()
     {
         // 피격 애니메이션 상태 진입

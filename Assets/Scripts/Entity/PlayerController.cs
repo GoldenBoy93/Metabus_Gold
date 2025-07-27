@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : BaseController
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
+    GameObject scanObject;
 
     public void Init(GameManager gameManager)
     {
@@ -14,31 +15,54 @@ public class PlayerController : BaseController
     protected override void HandleAction()
     {
         // 키보드 입력을 통해 이동 방향 계산 (좌/우/상/하)
-        float horizontal = Input.GetAxisRaw("Horizontal"); // A/D 또는 ←/→
-        float vertical = Input.GetAxisRaw("Vertical"); // W/S 또는 ↑/↓
+        // 토크액션이 true 상태일때는 키입력 안됨
+        float horizontal = gameManager.isTalkAction ? 0 : Input.GetAxisRaw("Horizontal"); // A/D 또는 ←/→
+        float vertical = gameManager.isTalkAction ? 0 : Input.GetAxisRaw("Vertical"); // W/S 또는 ↑/↓
 
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonDown("Horizontal");
-        bool vUp = Input.GetButtonDown("Vertical");
+        bool hDown = gameManager.isTalkAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = gameManager.isTalkAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = gameManager.isTalkAction ? false : Input.GetButtonDown("Horizontal");
+        bool vUp = gameManager.isTalkAction ? false : Input.GetButtonDown("Vertical");
 
         if (hDown || hUp)
             isHorizontalMove = true;
         else if (vDown || vUp)
             isHorizontalMove = false;
 
+        // 4방향으로만 움직이기
         movementDirection = isHorizontalMove ? new Vector2(horizontal, 0) : new Vector2(0, vertical);
 
-        // 핸들액션은 베이스컨트롤러에서 계속 업데이트가 되는데 룩다이렉션을 조건안에 넣어서
-        // movementDirection이 (0,0)이 아닐 때만(=움직이고 있을때만) lookDirection이 업데이트 되도록 만듦
-        // 즉 멈추면 바라보는 방향 그대로 정지되게 만듦
-        //if (movementDirection.magnitude > 0) 
-        //{
-        //    lookDirection = movementDirection;
-        //}
+        // 플레이어가 이동 중일 때만 lookDirection 업데이트
+        if (movementDirection != Vector2.zero)
+        {
+            lookDirection = movementDirection;
+        }
 
         // 공격키 지정 (z키)
         isAttacking = Input.GetKeyDown(KeyCode.Z);
+
+        if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
+        {
+            //Debug.Log($"This is {scanObject.name}");
+            
+            gameManager.TalkAction(scanObject);
+        }
+    }
+
+    protected override void HandleAction2()
+    {
+        // 조사액션 Ray
+        Debug.DrawRay(_rigidbody.position, lookDirection * 1f, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(_rigidbody.position, LookDirection, 1f, LayerMask.GetMask("NPC"));
+
+        if (rayHit.collider != null)
+        {
+            scanObject = rayHit.collider.gameObject;
+        }
+        else
+        {
+            scanObject = null;
+        }
     }
 
     public override void Death()
