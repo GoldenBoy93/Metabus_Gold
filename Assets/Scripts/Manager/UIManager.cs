@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangePlayerHP(float currentHP, float maxHP)
     {
-        gameUI.UpdateHPSlider(currentHP / maxHP);
+        gameUI.UpdatePlayerHPSlider(currentHP / maxHP);
     }
 
     // 현재 UI 상태를 변경하고, 각 UI 오브젝트에 상태를 전달

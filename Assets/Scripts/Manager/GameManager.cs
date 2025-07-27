@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         enemyManager.StopWave(); // 적 스폰 중지
+        uiManager.SetGameOver();
     }
 
     public void TalkAction(GameObject scanObj)

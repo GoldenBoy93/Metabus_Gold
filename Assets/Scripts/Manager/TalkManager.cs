@@ -43,7 +43,7 @@ public class TalkManager : MonoBehaviour
 
         talkData.Add(11 + 1000, new string[] { "야! 거기 너!:2", "나 좀 도와줘!:2", "상황 딱보면 몰라? 저거 좀 어떻게 해보라고!:2" });
 
-        talkData.Add(20 + 1000, new string[] { "야! 거기 너!:2", "나 좀 도와줘!:2", "상황 딱보면 몰라? 저거 좀 어떻게 해보라고!:2" });
+        talkData.Add(20 + 1000, new string[] { "야!:2", "내가 말리라고 했지! 사람을 이렇게 패 놓으면 어떻게 해!:2", "내 남자친구란 말야!:2" });
 
         portraitData.Add(1000 + 0, portraitArr[0]); // Alice디폴트
         portraitData.Add(1000 + 1, portraitArr[1]); // Alice반함
