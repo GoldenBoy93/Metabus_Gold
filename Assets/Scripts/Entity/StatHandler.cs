@@ -24,6 +24,15 @@ public class StatHandler : MonoBehaviour
         set => speed = Mathf.Clamp(value, 0, 20);
     }
 
+    // 대시 속도 (1f ~ 20f 사이 값만 허용)
+    [Range(1f, 20f)][SerializeField] private float dashSpeed = 5;
+    // 외부에서 접근 가능한 프로퍼티 (값 변경 시 0~20f로 제한)
+    public float DashSpeed
+    {
+        get => dashSpeed;
+        set => dashSpeed = Mathf.Clamp(value, 0, 20);
+    }
+
 
     [Header("Attack Info")]
     [SerializeField] private float attackDelay = 1f; // 공격 간 딜레이
