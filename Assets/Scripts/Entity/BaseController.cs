@@ -17,7 +17,7 @@ public class BaseController : MonoBehaviour
     protected AnimationHandler animationHandler;
     protected StatHandler statHandler; // 캐릭터의 능력치(속도, 체력 등)를 담고 있는 컴포넌트
 
-
+    protected bool isDash; // 대시 중 여부
     protected bool isAttacking; // 공격 중 여부
     private float timeSinceLastAttack = float.MaxValue; // 마지막 공격 이후 경과 시간
 
@@ -68,7 +68,15 @@ public class BaseController : MonoBehaviour
 
     private void Movment(Vector2 direction)
     {
-        direction = direction * statHandler.Speed; // 이동 속도
+        if (isDash)
+        {
+            Debug.Log("Im Dash");
+            direction = direction * statHandler.DashSpeed; // 이동 속도
+        }
+        else
+        {
+            direction = direction * statHandler.Speed; // 이동 속도
+        }
 
         // 넉백 중이면 이동 속도 감소 + 넉백 방향 적용
         if (knockbackDuration > 0.0f)

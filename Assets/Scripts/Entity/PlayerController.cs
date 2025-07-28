@@ -49,12 +49,16 @@ public class PlayerController : BaseController
         // 공격키 지정 (z키)
         isAttacking = Input.GetKeyDown(KeyCode.Z);
 
+        // 상호작용 관련 키입력
         if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
         {
             //Debug.Log($"This is {scanObject.name}");
             
             gameManager.TalkAction(scanObject);
         }
+
+        // 달리기 기능
+        isDash = Input.GetKey(KeyCode.LeftShift);
     }
 
     protected override void HandleAction2()

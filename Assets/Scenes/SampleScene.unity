@@ -6496,6 +6496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 3
+  dashSpeed: 8
   attackDelay: 1
   attackPower: 2
   attackRange: 10
@@ -6646,8 +6647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: -25}
-  m_SizeDelta: {x: 270, y: 150}
+  m_AnchoredPosition: {x: 20, y: -55}
+  m_SizeDelta: {x: 340, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286050090
 MonoBehaviour:
@@ -16000,7 +16001,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD - \uC774\uB3D9\nZ - \uACF5\uACA9\nF - \uC0C1\uD638\uC791\uC6A9"
+  m_text: "WASD - \uC774\uB3D9\nZ - \uACF5\uACA9\nF - \uC0C1\uD638\uC791\uC6A9\nL.Shift
+    - \uB2EC\uB9AC\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffac7dbd43a695549af5e8d5e9cc8848, type: 2}
   m_sharedMaterial: {fileID: 5473018901630842097, guid: ffac7dbd43a695549af5e8d5e9cc8848, type: 2}
@@ -16063,7 +16065,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -98.81291, y: 0, z: -101.21386, w: 0}
+  m_margin: {x: -98.81291, y: 0, z: -168.76242, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
