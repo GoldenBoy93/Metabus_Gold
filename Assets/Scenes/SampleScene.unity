@@ -6531,7 +6531,7 @@ GameObject:
   - component: {fileID: 281833503}
   - component: {fileID: 281833502}
   - component: {fileID: 281833504}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: ATM2
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -6698,7 +6698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292941406}
   - component: {fileID: 292941407}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6867,7 +6867,7 @@ GameObject:
   - component: {fileID: 331994573}
   - component: {fileID: 331994572}
   - component: {fileID: 331994574}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: ATM3
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -7230,7 +7230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452019814}
   - component: {fileID: 452019815}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7854,7 +7854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685361958}
   - component: {fileID: 685361959}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12488,7 +12488,7 @@ GameObject:
   - component: {fileID: 1649834029}
   - component: {fileID: 1649834030}
   - component: {fileID: 1649834031}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: ATM1
   m_TagString: NPC
   m_Icon: {fileID: 0}
