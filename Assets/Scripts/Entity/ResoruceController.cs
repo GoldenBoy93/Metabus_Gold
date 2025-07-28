@@ -14,6 +14,8 @@ public class ResourceController : MonoBehaviour
     public float CurrentHealth { get; private set; } // 현재 체력 (외부 접근만 허용)
     public float MaxHealth => statHandler.Health; // 최대 체력은 StatHandler로부터 가져옴
 
+    public AudioClip damageClip;
+
     // 체력이 바뀔 때 호출되는 이벤트 (현재 체력, 최대 체력 전달)
     private Action<float, float> OnChangeHealth;
 
@@ -67,6 +69,8 @@ public class ResourceController : MonoBehaviour
         {
             animationHandler.Damage(); // 맞는 애니메이션 실행
 
+            if (damageClip != null)
+                SoundManager.PlayClip(damageClip);
         }
 
         // 체력이 0 이하가 되면 사망 처리

@@ -104,10 +104,15 @@ public class GameManager : MonoBehaviour
     public void TalkAction(GameObject scanObj)
     {
         scanObject = scanObj;
-        //talkText.text = $"이것의 이름은 {scanObject.name}이라고 한다";
+        
         ObjectData objectData = scanObj.GetComponent<ObjectData>();
+        ObjectData objectDataSoundClip = scanObj.GetComponent<ObjectData>();
+
         Talk(objectData.id, objectData.isNPC);
         
+            if (objectDataSoundClip.talkClip != null)
+                SoundManager.PlayClip(objectDataSoundClip.talkClip);
+
         // 토크액션이 true라면 대화창을 켠다
         talkPanel.SetActive(isTalkAction);
     }

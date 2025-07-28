@@ -70,7 +70,6 @@ public class BaseController : MonoBehaviour
     {
         if (isDash)
         {
-            Debug.Log("Im Dash");
             direction = direction * statHandler.DashSpeed; // 이동 속도
         }
         else
