@@ -6,7 +6,8 @@ public class PlayerController : BaseController
 {
     public GameManager gameManager;
     GameObject scanObject;
-    public GameObject gameUI;
+    
+    public GameObject gameUI; // PlayerController 스크립트에 GameUI 오브젝트를 연결할 수 있도록 인스펙터에 추가
 
     public void Init(GameManager gameManager)
     {
@@ -15,10 +16,9 @@ public class PlayerController : BaseController
 
     protected override void HandleAction()
     {
-        // 게임중이 아닐경우 리턴 => 플레이어 컨틀로 불가
+        // 게임중이 아닐경우 리턴 => 플레이어 컨트롤 불가
         if (!gameUI.activeSelf)
         {
-            //Debug.Log("GameUI is not Active");
             return;
         }
 
