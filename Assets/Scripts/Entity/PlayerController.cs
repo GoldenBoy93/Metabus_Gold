@@ -6,6 +6,7 @@ public class PlayerController : BaseController
 {
     public GameManager gameManager;
     GameObject scanObject;
+    public GameObject gameUI;
 
     public void Init(GameManager gameManager)
     {
@@ -14,6 +15,13 @@ public class PlayerController : BaseController
 
     protected override void HandleAction()
     {
+        // 게임중이 아닐경우 리턴 => 플레이어 컨틀로 불가
+        if (!gameUI.activeSelf)
+        {
+            //Debug.Log("GameUI is not Active");
+            return;
+        }
+
         // 키보드 입력을 통해 이동 방향 계산 (좌/우/상/하)
         // 토크액션이 true 상태일때는 키입력 안됨
         float horizontal = gameManager.isTalkAction ? 0 : Input.GetAxisRaw("Horizontal"); // A/D 또는 ←/→
