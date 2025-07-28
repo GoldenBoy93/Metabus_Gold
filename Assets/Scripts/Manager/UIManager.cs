@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.Home);
     }
 
+    
+
     public UIState GetCurrentState()
     {
         return currentState;
